@@ -5,6 +5,7 @@ public class BaseContext {
     public static ThreadLocal<Long> threadLocal = new ThreadLocal<>();
 
     public static void setCurrentId(Long id) {
+        System.out.println("设置当前线程的 id：" + id);
         threadLocal.set(id);
     }
 

@@ -1,6 +1,7 @@
 package com.sky.mapper;
 
 import com.github.pagehelper.Page;
+import com.sky.annotation.AutoFill;
 import com.sky.enumeration.OperationType;
 import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
@@ -20,6 +21,7 @@ public interface CategoryMapper {
             " VALUES" +
             " (#{type}, #{name}, #{sort}, #{status}, #{createTime}, #{updateTime}, #{createUser}, #{updateUser})")
     void insert(Category category);
+    @AutoFill(value = OperationType.INSERT)
 
     /**
      * 分页查询
@@ -40,6 +42,7 @@ public interface CategoryMapper {
      * @param category
      */
     void update(Category category);
+    @AutoFill(value = OperationType.UPDATE)
 
     /**
      * 根据类型查询分类
