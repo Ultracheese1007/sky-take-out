@@ -72,6 +72,9 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
         log.info("开始进行静态资源映射...");
         registry.addResourceHandler("/doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+        // 让浏览器可以通过 http://localhost:8080/static/图片名.jpg 访问你本地图片
+        registry.addResourceHandler("/static/**")
+                .addResourceLocations("file:/Users/maxinmei/Documents/《苍穹外卖》/资料/day03/图片资源/");
     }
 
     /**
