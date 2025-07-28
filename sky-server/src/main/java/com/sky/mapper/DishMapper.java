@@ -10,6 +10,8 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface DishMapper {
 
@@ -51,7 +53,7 @@ public interface DishMapper {
      *
      * @param id
      */
-    @Delete("delete from dish where id = #{id}")
+
     void deleteById(Long id);
 
     /**
@@ -61,4 +63,20 @@ public interface DishMapper {
      */
     @AutoFill(value = OperationType.UPDATE)   //自定义注解，用于标记该方法（这里是 update(Dish dish) 方法）在执行时需要自动填充一些公共字段，例如：updateTime：修改时间
     void update(Dish dish);
+
+    /**
+     * 动态条件查询菜品
+     *
+     * @param dish
+     * @return
+    */
+    List<Dish> list(Dish dish);
+
+    /**
+     * 根据套餐id查询菜品
+     * @param setmealId
+     * @return
+     */
+    @Select("select a.* from dish a left join setmeal_dish b on a.id = b.dish_id where b.setmeal_id = #{setmealId}")
+    List<Dish> getBySetmealId(Long setmealId);
 }

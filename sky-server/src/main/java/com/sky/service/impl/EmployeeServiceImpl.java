@@ -142,7 +142,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employee;
     }
 
-
+    /**
+     * 修改员工状态
+     *
+     * @param status
+     * @param id
+     */
     public void update(EmployeeDTO employeeDTO){
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDTO,employee);
