@@ -8,6 +8,13 @@
         values (#{categoryId}, #{name}, #{price}, #{status}, #{description}, #{image}, #{createTime}, #{updateTime},
                 #{createUser}, #{updateUser})
     </insert>
+    <update id="update" parameterType="com.sky.entity.Setmeal">
+        UPDATE setmeal
+        SET status = #{status}
+        WHERE id = #{id}
+    </update>
+
+
 
     <select id="pageQuery" resultType="com.sky.vo.SetmealVO">
         select
