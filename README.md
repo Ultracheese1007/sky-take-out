@@ -2,7 +2,7 @@
 
 A full-featured **Spring Boot + MyBatis + Redis** based food delivery backend system.  
 This project simulates a real-world take-out business workflow, covering user ordering, merchant order management, and operational data reporting.  
-Developed and optimized by **Xinmei Ma (Leah)** as a practical backend engineering project for internship portfolio.
+Developed and optimized by **Xinmei Ma (Leah)** as a backend engineering project.
 
 ---
 
